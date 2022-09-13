@@ -195,7 +195,8 @@
                 <a href="/registration" class="nav-item nav-link">Register</a>
               </div>
               {% endcomment %} {% if request.session.email %}
-              {{request.session.email}} &nbsp;&nbsp;
+              <!-- {{request.session.email}} &nbsp;&nbsp; -->
+              <a href="/profile" class="nav-item nav-link">Profile</a>
               <a href="{% url 'logout' %}">logout</a>
               {% else %}
               <div class="navbar-nav ml-auto py-0">

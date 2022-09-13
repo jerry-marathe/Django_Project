@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'wekleen.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'login_system',
+        'NAME': 'winkelen_stop',
         'USER':'root',
         'PASSWORD' : '',
         'HOST': 'localhost',

@@ -190,7 +190,9 @@
                 </div>
                 <a href="/contact" class="nav-item nav-link">Contact Us</a>
               </div>
-              {% if request.session.email %} {{request.session.email}}
+              {% if request.session.email %} 
+              <!-- {{request.session.email}} -->
+              <a href="/profile" class="nav-item nav-link">Profile</a>
               &nbsp;&nbsp;
               <a href="{% url 'logout' %}">logout</a>
               {% else %}

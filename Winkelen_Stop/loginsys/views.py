@@ -30,6 +30,9 @@ def details(request):
 def shop(request):
     return render(request,'shop.html')
 
+def profile(request):
+    return render(request,'profile.html')
+
 def userreg(request):
     if request.method=='POST':
         username = request.POST['username']
