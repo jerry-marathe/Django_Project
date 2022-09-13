@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>RegistrationForm_v10 by Colorlib</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- LINEARICONS -->
+    <link
+      rel="stylesheet"
+      href="/static/registration/fonts/linearicons/style.css"
+    />
+
+    <!-- STYLE CSS -->
+    <link rel="stylesheet" href="/static/registration/css/style.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="inner">
+        <img
+          src="/static/registration/images/image-1.png"
+          alt=""
+          class="image-1"
+        />
+        <form action="POST">
+           {% csrf_token %}
+
+          <h3>New Account?</h3>
+          <div class="form-holder">
+            <span class="lnr lnr-user"></span>
+            <input type="text" class="form-control" placeholder="Enter User Name"
+            name="username" required/>
+          </div>
+          <div class="form-holder">
+            <span class="lnr lnr-envelope"></span>
+            <input type="text" class="form-control" placeholder="Mail"
+            name="email" />
+          </div>
+          <div class="form-holder">
+            <span class="lnr lnr-lock"></span>
+            <input
+              type="password"
+              class="form-control"
+              placeholder="Password"
+              name="pwd"
+            />
+          </div>
+          <div class="form-holder">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter Age"
+              name="age"
+            />
+          </div>
+          <div class="form-holder">
+            Gender :
+            <input type="radio" value="M" name="gender"  required/>Male |
+            <input type="radio" value="F" name="gender" required/>Female
+          </div>
+          {% comment %} <div class="form-holder">
+            <select name="nationality">
+            <option value="indian">Indain</option>
+            <option value="american">American</option>
+            <option value="other">Other</option>
+            </select>
+          </div> {% endcomment %}
+          <select class="form-select" aria-label="Default select example"
+          name="nationality">
+  <option value="indian" selected>indian</option>
+  <option value="dubai">Dubai</option>
+  <option value="american">American</option>
+  <option value="other">Other</option>
+</select>
+          <button>
+            <span>Register</span>
+          </button>
+          <br />
+{% if messages %}
+{% for msg in messages %}
+<h3>{{msg}}</h3>
+{% endfor %}
+{% endif %}
+<hr/>
+<em>If you Already A Member <a href="{% url 'loginpage' %}">Login In</a></em>
+<br/>
+<hr/>
+<em>Back To HomePage<a href="{% url 'logout' %}">Back-To Home-Page</a></em>
+        </form>
+        <img
+          src="/static/registration/images/image-2.png"
+          alt=""
+          class="image-2"
+        />
+      </div>
+    </div>
+
+    <script src="/static/registration/js/jquery-3.3.1.min.js"></script>
+    <script src="/static/registration/js/main.js"></script>
+  </body>
+</html>

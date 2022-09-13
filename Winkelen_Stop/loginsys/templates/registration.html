@@ -1,0 +1,55 @@
+<div style=" color : red; text-align : center;">
+<h1> Registration Form </h1>
+</div>
+<div style="text-align : center">
+<form method="POST">
+    {% csrf_token %}
+
+<table border="1">
+  <tr>
+    <td>User Name :</td>
+    <td><input type="text" placeholder="Enter User Name"  name="username" required/></td>
+  </tr>
+  <tr>
+    <td>Email :</td>
+    <td><input type="Email" placeholder="Enter Email" name="email" required/></td>
+  </tr>
+  <tr>
+    <td>Password :</td>
+    <td><input type="password" placeholder="Enter Password" name="pwd" required/></td>
+  </tr>
+  <tr>
+    <td>Age :</td>
+    <td><input type="text" placeholder="Enter Age" name="age" required/></td>
+  </tr>
+  <tr>
+    <td>Gender :</td>
+    <td>
+      <input type="radio" value="M" name="gender"  required/>Male |
+       <input type="radio" value="F" name="gender" required/>Female
+    </td>
+  </tr>
+  <tr>
+    <td>Nationality</td>
+    <td><select name="nationality">
+        <option value="indian">Indain</option>
+        <option value="american">American</option>
+        <option value="other">Other</option>
+    </select></td>
+  </tr>
+  <tr>
+    <td><button type="submit">Registration</td>
+  </tr>
+</table>
+{% if messages %}
+{% for msg in messages %}
+<h3>{{msg}}</h3>
+{% endfor %}
+{% endif %}
+<hr/>
+<em>If you Already A Member <a href="{% url 'loginpage' %}">Login In</a></em>
+<br/>
+<hr/>
+<em>Back To HomePage<a href="{% url 'logout' %}">Back-To Home-Page</a></em>
+</form>
+</div>
