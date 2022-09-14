@@ -39,6 +39,7 @@ def userreg(request):
         email = request.POST['email']
         pwd = request.POST['pwd']
         age = request.POST['age']
+        # number = request.POST['number']
         gender = request.POST['gender']
         nationality =  request.POST['nationality']
         newuser(username=username,email=email,pwd=pwd,age=age,gender=gender,nationality=nationality).save()

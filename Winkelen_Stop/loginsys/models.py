@@ -8,5 +8,6 @@ class newuser(models.Model):
     email = models.CharField(max_length=150)
     pwd = models.CharField(max_length=150)
     age = models.IntegerField()
+    # number = models.IntegerField()
     gender = models.CharField(max_length=1)
     nationality = models.CharField(max_length=150)
