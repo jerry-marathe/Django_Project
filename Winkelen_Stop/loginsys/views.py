@@ -55,6 +55,7 @@ def loginpage(request):
             userdetails=newuser.objects.get(email=request.POST['email'],pwd=request.POST['pwd'])
             print('username=',userdetails)
             request.session['email'] = userdetails.email
+            request.session['username'] = userdetails.username
             return render(request,'index.html')
         except newuser.DoesNotExist as e:
             messages.success(request,'username / password invalid..!')
