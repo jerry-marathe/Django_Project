@@ -146,6 +146,7 @@
                   <div class="text-center text-sm-left mb-2 mb-sm-0">
                     <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">{{request.session.username}}</h4>
                     <p class="mb-0">{{request.session.email}}</p>
+                    <p class="mb-0">Age:- {{request.session.age}}</p>
                    
                     <div class="mt-2">
                       <button class="btn btn-primary" type="button">
@@ -268,10 +269,9 @@
         <div class="card mb-3">
           <div class="card-body">
             <div class="px-xl-3">
-              <button class="btn btn-block btn-secondary">
-                <i class="fa fa-sign-out"></i>
-                <a href="{% url 'logout' %}">Logout</a>
-              </button>
+              <a type="submit" a href="{% url 'logout' %}" class="btn btn-block btn-secondary">
+                <i class="fa fa-sign-out"></i> Logout</a>
+              </button>     
             </div>
           </div>
         </div>
@@ -279,7 +279,8 @@
           <div class="card-body">
             <h6 class="card-title font-weight-bold">Support</h6>
             <p class="card-text">Get fast, free help from our friendly assistants.</p>
-            <button type="button" class="btn btn-primary">Contact Us</button>
+            <!-- <button type="button" class="btn btn-primary">Contact Us</button> -->
+            <a href="/contact" class="btn btn-primary" role="button">Contact Us</a>
           </div>
         </div>
       </div>

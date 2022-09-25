@@ -11,3 +11,4 @@ class newuser(models.Model):
     # number = models.IntegerField()
     gender = models.CharField(max_length=1)
     nationality = models.CharField(max_length=150)
+    

@@ -50,17 +50,31 @@ def userreg(request):
         return render(request,'registration.html')
         
 def loginpage(request):
+    # if request.method=="POST":
+    #     try:
+    #         userdetails=newuser.objects.get(email=request.POST['email'],pwd=request.POST['pwd'])
+    #         print('username=',userdetails)
+    #         request.session['email'] = userdetails.email
+    #         request.session['username'] = userdetails.username
+    #         request.session['age'] = userdetails.age
+    #         return render(request,'index.html')
+    #     except newuser.DoesNotExist as e:
+    #         messages.success(request,'username / password invalid..!')
+    # return render(request,'login.html') 
+    
     if request.method=="POST":
         try:
             userdetails=newuser.objects.get(email=request.POST['email'],pwd=request.POST['pwd'])
             print('username=',userdetails)
             request.session['email'] = userdetails.email
             request.session['username'] = userdetails.username
+            request.session['age'] = userdetails.age
             return render(request,'index.html')
         except newuser.DoesNotExist as e:
             messages.success(request,'username / password invalid..!')
     return render(request,'login.html') 
-    
+
+
 def logout(request):
     try:
         del request.session['email']
