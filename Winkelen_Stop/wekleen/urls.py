@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-
+from user_profile import views as pf 
 from loginsys import views
 # from loginsys import views
 
@@ -30,4 +30,11 @@ urlpatterns = [
     # path('registration/',views.registration),
     # path('loginsys/', include('loginsys.ur/ls')),
     # path('/registration', views.userreg),
+
+
+    path('profile', pf.profile),  
+    path('show',pf.show),  
+    path('edit/<int:id>', pf.edit),  
+    path('update/<int:id>', pf.update),  
+    path('delete/<int:id>', pf.destroy),
 ]
