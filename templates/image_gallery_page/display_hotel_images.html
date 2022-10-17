@@ -1,0 +1,58 @@
+{% include "winkelen_site/header1.html" %}
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Hotel Images</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+        </script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+        </script>
+    </head> -->
+
+<!-- <body> -->
+<!-- {% for hotel in hotel_images %}
+<div class="card text-center m-sm-4" style="width: 18rem;">
+    <img src="{{ hotel.hotel_Main_Img.url }}" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">{{ hotel.name }}</h5>
+
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+</div>
+{% endfor %} -->
+<div class="container-fluid pt-5">
+    <div class="row px-xl-5 pb-3">
+        {% for hotel in hotel_images %}
+        <div class="col-lg-3 col-md-6 col-sm-12 pb-1 shadow-lg p-3 mb-5 bg-body rounded">
+            <div class="card product-item border-0 mb-4">
+                <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                    <img class="img-fluid w-100" src="{{ hotel.hotel_Main_Img.url }}" alt="" />
+                </div>
+                <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                    <h6 class="text-truncate mb-3">
+                        <h3><i>{{ hotel.name }}</i></h3>
+                    </h6>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- {% for hotel in hotel_images %}
+        <div class="col-md-4">
+            {{ hotel.name }}
+            <img src="{{ hotel.hotel_Main_Img.url }}" class="img-responsive"
+                style="width: 100%; float: left; margin-right: 10px;" />
+        </div>
+        {% endfor %} -->
+
+<!-- </body> -->
+
+<!-- </html> -->
+{% include "winkelen_site/footer1.html" %}

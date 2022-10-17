@@ -8,25 +8,25 @@ def emp(request):
         if form.is_valid():  
             try:  
                 form.save()  
-                return redirect('/show')  
+                return redirect('/admin_site')  
             except:  
                 pass  
     else:  
         form = EmployeeForm()  
-    return render(request,'index.html',{'form':form})  
+    return render(request,'emp_crud/index.html',{'form':form})  
 def show(request):  
     employees = Employee.objects.all()  
-    return render(request,"show.html",{'employees':employees})  
+    return render(request,"emp_crud/show.html",{'employees':employees})  
 def edit(request, id):  
     employee = Employee.objects.get(id=id)  
-    return render(request,'edit.html', {'employee':employee})  
+    return render(request,'emp_crud/edit.html', {'employee':employee})  
 def update(request, id):  
     employee = Employee.objects.get(id=id)  
     form = EmployeeForm(request.POST, instance = employee)  
     if form.is_valid():  
         form.save()  
         return redirect("/show")  
-    return render(request, 'edit.html', {'employee': employee})  
+    return render(request, 'emp_crud/edit.html', {'employee': employee})  
 def destroy(request, id):  
     employee = Employee.objects.get(id=id)  
     employee.delete()  

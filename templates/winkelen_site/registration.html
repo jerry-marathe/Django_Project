@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Registration Form</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- LINEARICONS -->
+		<link rel="stylesheet" href="/static/reg/fonts/linearicons/style.css">
+		
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="/static/reg/css/style.css">
+	</head>
+
+	<body>
+
+		<div class="wrapper">
+			<div class="inner">
+				<img src="/static/reg/images/image-1.png" alt="" class="image-1">
+				<form method="POST">
+					{% csrf_token %}
+					<h3>New Account?</h3>
+					<div class="form-holder">
+						<span class="lnr lnr-user"></span>
+						<input type="text" class="form-control" placeholder="Username" name="username" required/>
+					</div>
+					<!-- <div class="form-holder">
+						<span class="lnr lnr-phone-handset"></span>
+						<input type="text" class="form-control" placeholder="Phone Number" name="number" required/>
+					</div> -->
+					<div class="form-holder">
+						<span class="lnr lnr-envelope"></span>
+						<input type="text" class="form-control" placeholder="Mail" name="email" required/>
+					</div>
+					<div class="form-holder">
+						<span class="lnr lnr-lock"></span>
+						<input type="password" class="form-control" placeholder="Password" name="pwd" required/>
+					</div>
+					<div class="form-holder">
+						<span class="lnr lnr-age"></span>
+						<input type="text" class="form-control" placeholder="Age" name="age" required/>
+					</div>
+					<div class="form-holder">
+						<span class="lnr lnr-gender"></span>
+						<input type="radio" value="M" name="gender"  required/>Male |
+     					<input type="radio" value="F" name="gender" required/>Female
+					</div>
+					<div class="form-holder">
+						<span class="lnr lnr-"></span>
+						<select name="nationality">
+							<h3>Nationality:</h3>
+							<option value="indian">Indain</option>
+							<option value="american">American</option>
+							<option value="other">Other</option>
+						</select>
+					</div>
+					<!-- <button>
+						<span>Register</span>
+					</button> -->
+					<button type="submit">Register</button>
+					<br>
+					<br>
+					
+
+					{% if messages %}
+	{% for msg in messages %}
+<h3>{{msg}}</h3>
+{% endfor %}
+{% endif %}
+<hr/>
+<center><em>If you Already A Member <a href="{% url 'loginpage' %}">Login In</a></em></center>
+<hr/>
+<center><em><a href="{% url 'logout' %}">Back-To Home-Page</a></em></center>
+				</form>
+				<img src="/static/reg/images/image-2.png" alt="" class="image-2">
+			</div>
+			
+		</div>
+		
+		<script src="/static/reg/js/jquery-3.3.1.min.js"></script>
+		<script src="/static/reg/js/main.js"></script>
+	</body>
+</html>

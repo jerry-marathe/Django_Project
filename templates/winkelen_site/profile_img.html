@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Profile_image</title>
+    </head>
+
+    <body>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.profile_Main_Img }}
+    
+    <button type="submit">Upload</button>
+</form>
+</body>
+
+</html>

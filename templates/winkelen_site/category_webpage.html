@@ -1,0 +1,47 @@
+{% include "winkelen_site/header1.html" %}
+
+<div class="container-fluid pt-5">
+    <div class="text-center mb-4">
+        <h2 class="section-title px-5">
+            <span class="px-2">Categories</span>
+        </h2>
+    </div>
+    <div class="row px-xl-5 pb-3">
+        {% for cat in categorys %}
+        <div class="col-lg-3 col-md-6 col-sm-12 pb-1 shadow-lg p-3 mb-5 bg-body rounded">
+            <div class="card product-item border-0 mb-4">
+                <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                    <h6 class="text-truncate mb-3">
+                        <h3>{{cat.category}}</h3>
+                    </h6>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<br>
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+        {% if categorys.has_previous %}
+        <li class="page-item">
+            <a class="page-link" href="/category_webpage/?page=1 ">First</a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="/category_webpage/?page={{ categorys.previous_page_number}}">Previous</a>
+        </li>
+        {% endif %}
+        {% for n in total_page_list %}
+        <li class="page-item "><a class="page-link" href="/category_webpage/?page={{n}} ">{{n}}</a></li>
+        {% endfor %}
+        {% if categorys.has_next %}
+        <li class="page-item">
+            <a class="page-link" href="/category_webpage/?page={{lastpage}}">Last</a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="/category_webpage/?page={{ categorys.next_page_number}}">Next</a>
+        </li>
+        {% endif %}
+    </ul>
+</nav>
+{% include "winkelen_site/footer1.html" %}

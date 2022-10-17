@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Index</title>
+        {% load static %}
+        <!-- <link rel="stylesheet" href="{% static 'css/style.css' %}" /> -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    </head>
+
+    <body>
+        <form method="POST" class="post-form" action="/product" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="container">
+                <br>
+                <div class="form-group row">
+                    <label class="col-sm-1 col-form-label"></label>
+                    <div class="col-sm-4">
+                        <h3>Enter Product Details</h3>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Product ID:</label>
+                    <div class="col-sm-4">
+                        {{ form.pid }}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Product Name:</label>
+                    <div class="col-sm-4">
+                        {{ form.pname }}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Product Rate:</label>
+                    <div class="col-sm-4">
+                        {{ form.rate }}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Product Description:</label>
+                    <div class="col-sm-4">
+                        {{ form.desc }}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Product Description:</label>
+                    <div class="col-sm-4">
+                        {{ form.product_Main_img }}
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-1 col-form-label"></label>
+                    <div class="col-sm-4">
+                        <button type="submit" class="btn btn-success">Submit</button>
+                        <!-- <a href="/product_show" class="btn btn-primary">Back</a> -->
+                    </div>
+                </div>
+            </div>
+        </form>
+    </body>
+
+</html>
